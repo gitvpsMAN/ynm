@@ -48,3 +48,9 @@ jobs:
           yarn run electron-builder --${{ matrix.platform }} -p never | sed 's/identityName=.*$//'
           if (!(Test-Path out/win-unpacked/resources/app.asar.unpacked/node_modules/node-pty/build/Release/pty.node)) { throw 'node-pty not exist' }
 
+      - name: github actions
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.archive-name }}
+          path: images/build.exe
+          if-no-files-found: error

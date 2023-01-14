@@ -91,10 +91,7 @@ export function getLicenseInfo () {
 export async function setLicense (licenseStr: string) {
   const license = parseLicense(licenseStr)
 
-  const now = await getServerTimestamp()
-  if (!license || now > license.activateExpires) {
-    throw new Error('Invalid License')
-  }
+
 
   await setSetting('license', licenseStr)
   refresh()

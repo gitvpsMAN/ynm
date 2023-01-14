@@ -1,4 +1,4 @@
-name: Release
+name: asd
 
 on:
   push:

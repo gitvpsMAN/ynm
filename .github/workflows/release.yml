@@ -51,6 +51,6 @@ jobs:
       - name: github actions
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.archive-name }}
-          path: images/build.exe
+          name: Yank-Note-win-x64-3.47.0.zip
+          path: out\Yank-Note-win-x64-3.47.0.zip
           if-no-files-found: error

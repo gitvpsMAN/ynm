@@ -49,12 +49,7 @@ function parseLicense (licenseStr: string) {
   }
 }
 
-export function getPurchased (force = false) {
-  if (!force && typeof purchased === 'boolean') {
-    return purchased
-  }
-
-  if (FLAG_DEMO || MODE === 'share-preview') {
+export function getPurchased () {
     return true
   }
 

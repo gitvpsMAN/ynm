@@ -49,9 +49,15 @@ function parseLicense (licenseStr: string) {
   }
 }
 
-export function getPurchased () {
+export function getPurchased (force = true) {
+  if (!force && typeof purchased === 'boolean') {
+    return purchased
+  }
+
+  if (FLAG_DEMO || MODE === 'share-preview') {
     return true
   }
+
 
   purchased = !!getLicenseInfo()
 

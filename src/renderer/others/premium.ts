@@ -49,9 +49,9 @@ function parseLicense (licenseStr: string) {
   }
 }
 
-export function getPurchased (force = true) {
+export function getPurchased (force = false) {
   if (!force && typeof purchased === 'boolean') {
-    return purchased
+    purchased = true;
   }
 
   if (FLAG_DEMO || MODE === 'share-preview') {
@@ -59,7 +59,7 @@ export function getPurchased (force = true) {
   }
 
 
-  purchased = !!getLicenseInfo()
+  purchased = true;
 
   return purchased
 }
